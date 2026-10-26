@@ -1,0 +1,372 @@
+/*
+  XLLIGENT LIGHT MODE
+  Scope: inner pages + shared header/footer surfaces.
+  Layout, spacing, animations, content and component functionality are preserved.
+  Only page surfaces, header/footer presentation, and dark-only readability fixes
+  required for a light theme are overridden here.
+*/
+
+:root {
+  --bg-primary: #f7f9fc;
+  --bg-secondary: #eef2f7;
+  --bg-card: #ffffff;
+  --text-primary: #171c2b;
+  --text-secondary: #596377;
+  --text-muted: #7b8496;
+  --border-color: rgba(35, 45, 70, 0.12);
+  --navbar-bg: rgba(255, 255, 255, 0.96);
+  --shadow: 0 20px 50px rgba(30, 40, 65, 0.10);
+}
+
+/* =========================================================
+   PAGE BACKGROUNDS — INNER PAGES ONLY
+========================================================= */
+
+.info-page,
+.contact-page,
+.xteam-page,
+.xreview-page,
+.xfaq-page,
+.projects-page,
+.project-details-page,
+.product-details-page,
+.products-page {
+  background: #f7f9fc !important;
+  color: #171c2b;
+}
+
+/* Main hero/section surfaces stay light without touching layout. */
+.info-page .info-hero,
+.info-page .info-section,
+.contact-page .contact-hero,
+.contact-page .contact-section,
+.xteam-page .xteam-hero,
+.xteam-page .xteam-intro,
+.xteam-page .xteam-values,
+.xteam-page .xteam-members,
+.xteam-page .xteam-cta,
+.xreview-page .xreview-hero,
+.xreview-page .xreview-google-section,
+.xreview-page .xreview-location-section,
+.xreview-page .xreview-cta,
+.xfaq-page .xfaq-hero,
+.xfaq-page .xfaq-section,
+.xfaq-page .xfaq-cta,
+.projects-page,
+.project-details-page,
+.product-details-page {
+  background-color: #f7f9fc !important;
+}
+
+/* The product details AI block was the one active dark inner-page section. */
+.product-details-page .product-ai-section {
+  background:
+    radial-gradient(circle at 10% 30%, rgba(117, 105, 232, 0.10), transparent 28%),
+    linear-gradient(135deg, #ffffff, #f4f6fb) !important;
+  color: #171c2b !important;
+}
+
+.product-details-page .product-ai-header h2,
+.product-details-page .product-ai-header p,
+.product-details-page .product-ai-item span {
+  color: #171c2b !important;
+}
+
+.product-details-page .product-ai-header p {
+  color: #596377 !important;
+}
+
+.product-details-page .product-ai-item {
+  border-color: rgba(35, 45, 70, 0.10) !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+}
+
+.product-details-page .product-ai-item:hover {
+  background: #ffffff !important;
+}
+
+/* =========================================================
+   HEADER — LIGHT
+========================================================= */
+
+.navbar,
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.96) !important;
+  color: #171c2b !important;
+  border-bottom: 1px solid rgba(35, 45, 70, 0.08);
+  box-shadow: 0 8px 28px rgba(30, 40, 65, 0.08);
+}
+
+.navbar-links {
+  background: transparent !important;
+}
+
+.navbar-links a {
+  color: #171c2b !important;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active-link {
+  color: #6154d6 !important;
+}
+
+.more-dropdown-menu {
+  background: #ffffff !important;
+  border-color: rgba(35, 45, 70, 0.12) !important;
+  box-shadow: 0 18px 45px rgba(30, 40, 65, 0.12) !important;
+}
+
+.more-dropdown-menu a {
+  color: #171c2b !important;
+}
+
+/* =========================================================
+   FOOTER — LIGHT
+========================================================= */
+
+.second-footer {
+  background: #ffffff !important;
+  color: #171c2b !important;
+  border: 1px solid rgba(35, 45, 70, 0.08);
+  box-shadow: 0 15px 45px rgba(30, 40, 65, 0.08);
+}
+
+.second-footer .footer-brand,
+.second-footer h6 {
+  color: #171c2b !important;
+}
+
+.second-footer p,
+.second-footer li,
+.second-footer li a {
+  color: #596377 !important;
+}
+
+.second-footer li a:hover {
+  color: #6154d6 !important;
+}
+
+.second-footer .social-links a {
+  border-color: rgba(35, 45, 70, 0.12);
+  color: #596377 !important;
+}
+
+.second-footer .social-links a:hover {
+  color: #6154d6 !important;
+  border-color: #7569e8 !important;
+}
+
+.second-footer .contact-list > li > svg {
+  color: #7569e8 !important;
+}
+
+.second-footer-bottom {
+  border-top-color: rgba(35, 45, 70, 0.10) !important;
+  color: #7b8496 !important;
+}
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+@media (max-width: 768px) {
+  .navbar-links {
+    background: rgba(255, 255, 255, 0.99) !important;
+    border-bottom-color: rgba(35, 45, 70, 0.10) !important;
+    box-shadow: 0 15px 30px rgba(30, 40, 65, 0.12) !important;
+  }
+}
+
+/* =========================================================
+   FINAL INNER-PAGE SURFACE SAFETY OVERRIDES
+========================================================= */
+body:has(.info-page),
+body:has(.contact-page),
+body:has(.products-page),
+body:has(.product-details-page),
+body:has(.projects-page),
+body:has(.project-details-page),
+body:has(.xteam-page),
+body:has(.xreview-page),
+body:has(.xfaq-page) {
+    background: #f7f9fc !important;
+    color: #171c2b !important;
+}
+
+
+/* ===== Final consistency and interaction polish ===== */
+:root {
+  --xlg-brand-dark: #172b4d;
+  --xlg-brand-primary: #246bfe;
+  --xlg-brand-accent: #15b8a6;
+  --xlg-text-main: #172033;
+  --xlg-text-muted: #596579;
+}
+
+/* Consistent light canvas and readable text for secondary pages. */
+.info-page, .xfaq-page, .xreview-page, .xabout-page, .xservice-page,
+.portfolio-page, .product-details-page, .contact-page {
+  color: var(--xlg-text-main);
+}
+.info-page .info-hero, .info-page .info-section,
+.xfaq-page .xfaq-hero, .xfaq-page .xfaq-section,
+.xreview-page .xreview-hero, .xreview-page .xreview-google-section,
+.xreview-page .xreview-cta {
+  scroll-margin-top: 96px;
+}
+.info-page .info-hero, .info-page .info-section { padding-left: clamp(24px, 7vw, 100px); padding-right: clamp(24px, 7vw, 100px); }
+.info-page .info-hero { padding-top: 100px; padding-bottom: 20px; }
+.info-page .info-hero h1, .info-page .services-heading h2{
+  
+    width: 100%;
+
+    margin: 8px 0 22px;
+
+        max-width: 1500px;
+
+    margin: 10px auto 22px;
+
+    color: var(--about-ink);
+
+    font-size: 48px;
+
+    font-weight: 800;
+
+    line-height: 1.12;
+
+    letter-spacing: -2px;
+}
+.info-page .info-section h2 { 
+    
+    width: 100%;
+
+    margin: 8px 0 22px;
+
+        max-width: 1500px;
+
+    margin: 10px auto 22px;
+
+    color: var(--about-ink);
+
+    font-size: 48px;
+
+    font-weight: 800;
+
+    line-height: 1.12;
+
+    letter-spacing: -2px;}
+.info-page .info-hero p, .info-page .info-section p { line-height: 1.75; }
+.section-tag, .career-label, .xfaq-tag, .xreview-tag { border-radius: 999px; }
+.xfaq-category-link.active { color: #fff; background: var(--xlg-brand-primary); border-color: var(--xlg-brand-primary); }
+.xfaq-category-link { cursor: pointer; }
+.xlligent-x-mark { display: inline-flex; align-items: center; justify-content: center; font-weight: 900; font-family: Inter, Arial, sans-serif; line-height: 1; color: #ffffff  ; }
+.sidebar-location p { display: flex; align-items: flex-start; gap: 8px; }
+.sidebar-location p svg { flex: 0 0 auto; color: #246bfe; margin-top: 3px; }
+.career-label, .career-type { border-radius: 999px; }
+.career-modern-copy > span { color: white; }
+.xlligent-loader { background: radial-gradient(circle at 50% 45%, #eef5ff 0%, #ffffff 55%, #eaf7f7 100%) !important; color: #172b4d !important; }
+.xlligent-loader-x { color: #246bfe !important; }
+.xlligent-loader-rest, .xlligent-loader-software { color: #061329 !important; }
+@media (max-width: 767px) {
+  .info-page .info-hero { padding-top: 76px; padding-bottom: 44px; }
+  .info-page .info-section { padding-top: 48px; padding-bottom: 48px; }
+}
+
+
+/* Shared spacing and typography for all secondary pages (Home is intentionally excluded). */
+.info-page > .info-hero,
+.info-page > .info-section,
+.info-page > .original-overview-section,
+.info-page > .about-who-section,
+.info-page > .original-fun-section,
+.info-page > .about-products-section,
+.info-page > .about-why-section,
+.xfaq-page > .xfaq-hero,
+.xfaq-page > .xfaq-section,
+.xreview-page > .xreview-hero,
+.xreview-page > .xreview-google-section,
+.xreview-page > .xreview-cta {
+  padding-left: clamp(24px, 7vw, 100px);
+  padding-right: clamp(24px, 7vw, 100px);
+}
+.info-page h1, .xfaq-page .xfaq-hero h1, .xreview-page .xreview-hero h1 { font-size: clamp(34px, 4.2vw, 58px); line-height: 1.12; }
+.info-page h2, .xfaq-page h2, .xreview-page h2 { line-height: 1.15; }
+.info-page p, .xfaq-page p, .xreview-page p { line-height: 1.75; }
+@media (max-width: 767px) {
+  .info-page > .info-hero, .info-page > .info-section,
+  .info-page > .original-overview-section, .info-page > .about-who-section,
+  .info-page > .original-fun-section, .info-page > .about-products-section,
+  .info-page > .about-why-section, .xfaq-page > .xfaq-hero,
+  .xfaq-page > .xfaq-section, .xreview-page > .xreview-hero,
+  .xreview-page > .xreview-google-section, .xreview-page > .xreview-cta {
+    padding-left: 20px; padding-right: 20px;
+  }
+}
+
+
+/* Consistent light backgrounds across all secondary pages. */
+.info-page, .xfaq-page, .xreview-page, .projects-page, .project-details-page,
+.product-details-page, .services-page, .contact-page { background: #ffffff; color: #172033; }
+.info-page > .info-hero, .info-page > .info-section,
+.info-page > .original-overview-section, .info-page > .about-who-section,
+.info-page > .original-fun-section, .info-page > .about-products-section,
+.info-page > .about-why-section, .xfaq-page > .xfaq-hero,
+.xfaq-page > .xfaq-section, .xreview-page > .xreview-hero,
+.xreview-page > .xreview-google-section, .xreview-page > .xreview-cta {
+  padding-left: 100px; padding-right: 100px;
+}
+.projects-page .projects-hero, .projects-page .projects-list,
+.project-details-page > section { padding-left: 100px; padding-right: 100px; }
+.info-page .info-hero, .xfaq-page .xfaq-hero, .xreview-page .xreview-hero,
+.projects-page .projects-hero { text-align: center; }
+@media (max-width: 1024px) {
+  .info-page > .info-hero, .info-page > .info-section,
+  .info-page > .original-overview-section, .info-page > .about-who-section,
+  .info-page > .original-fun-section, .info-page > .about-products-section,
+  .info-page > .about-why-section, .xfaq-page > .xfaq-hero,
+  .xfaq-page > .xfaq-section, .xreview-page > .xreview-hero,
+  .xreview-page > .xreview-google-section, .xreview-page > .xreview-cta,
+  .projects-page .projects-hero, .projects-page .projects-list,
+  .project-details-page > section { padding-left: 32px; padding-right: 32px; }
+}
+@media (max-width: 767px) {
+  .info-page > .info-hero, .info-page > .info-section,
+  .info-page > .original-overview-section, .info-page > .about-who-section,
+  .info-page > .original-fun-section, .info-page > .about-products-section,
+  .info-page > .about-why-section, .xfaq-page > .xfaq-hero,
+  .xfaq-page > .xfaq-section, .xreview-page > .xreview-hero,
+  .xreview-page > .xreview-google-section, .xreview-page > .xreview-cta,
+  .projects-page .projects-hero, .projects-page .projects-list,
+  .project-details-page > section { padding-left: 20px; padding-right: 20px; }
+}
+
+/* Contact, product-detail and CTA sections share the same page rhythm. */
+.contact-page > .contact-hero{
+  padding-top: 55px ;
+}
+.contact-page > .contact-section,
+.info-page > .original-about-cta,
+.xfaq-page > .xfaq-cta,
+.product-details-page > section {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.contact-page > .contact-hero { text-align: center; }
+.contact-page p, .product-details-page p { max-width: 100%; }
+@media (max-width: 1024px) {
+  .contact-page > .contact-hero, .contact-page > .contact-section,
+  .info-page > .original-about-cta, .xfaq-page > .xfaq-cta,
+  .product-details-page > section { padding-left: 32px; padding-right: 32px; 
+    padding-top: 35px !important;}
+}
+@media (max-width: 767px) {
+  .contact-page > .contact-hero, .contact-page > .contact-section,
+  .info-page > .original-about-cta, .xfaq-page > .xfaq-cta,
+  .product-details-page > section { padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 767px) {
+  .info-page .info-section h2 {        margin-bottom: 18px;
+        font-size: 30px;
+        line-height: 1.2;
+        letter-spacing: -0.6px;}
+}

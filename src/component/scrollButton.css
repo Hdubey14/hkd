@@ -1,0 +1,101 @@
+/* CSS co-located with src/component/scrollButton.jsx — extracted without changing declarations. */
+
+/* ===== FROM src/App.css ===== */
+.scroll-to-top {
+    position: fixed;
+    right: 100px;
+    bottom: 25px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    z-index: 9999;
+
+    transition: 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-4px);
+}
+
+.scroll-to-top,
+.back-to-top {
+    position: fixed !important;
+
+    right: 25px !important;
+    bottom: 25px !important;
+
+    width: 30px !important;
+    height: 30px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border-radius: 50% !important;
+
+    z-index: 99999 !important;
+}
+
+@media (max-width: 600px) {.scroll-to-top,
+    .back-to-top {
+        position: fixed !important;
+
+        right: 18px !important;
+        bottom: 10px !important;
+
+        width: 30px !important;
+        height: 30px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }}
+
+@media (max-width: 400px) {.scroll-to-top,
+    .back-to-top {
+        right: 15px !important;
+        bottom: 20px !important;
+
+        width: 40px !important;
+        height: 40px !important;
+    }}
+
+.scroll-to-top {
+    position: fixed !important;
+    right: 40px !important;
+    bottom: 5px !important;
+    width: 30px !important;
+    height: 30px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: none !important;
+}
+
+@media (max-width: 600px) {.scroll-to-top {
+        right: 18px !important;
+        bottom: 15px !important;
+        width: 30px !important;
+        height: 30px !important;
+    }}
+
+@media (max-width: 400px) {.scroll-to-top {
+        right: 15px !important;
+        bottom: 15px !important;
+        width: 30px !important;
+        height: 30px !important;
+    }}

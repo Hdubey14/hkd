@@ -1,0 +1,151 @@
+/* =========================================================
+   RESPONSIVE PATCH — TABLET, MOBILE & NARROW PORTRAIT SCREENS
+   Scope: <= 1000px only. Desktop layout above 1000px is untouched.
+   Keep this stylesheet imported after mobile-overrides.css.
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  html, body, #root { max-width: 100%; min-width: 0; overflow-x: clip; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, video, iframe { max-width: 100%; }
+
+  /* Navbar starts almost flush to the top on compact screens. */
+  .navbar {
+    top: 1px !important;
+    margin-top: 1px !important;
+  }
+
+  /* Keep page content below the fixed/sticky navigation. */
+  main, .page-container, .career-page, .contact-page,
+  .services-page, .portfolio-page, .project-page,
+  .review-page, .faq-page, .about-page {
+    scroll-margin-top: 82px;
+  }
+
+  /* Home hero: reduce excessive vertical space on narrow layouts. */
+  .merged-hero-container {
+    width: min(94%, 900px) !important;
+    min-height: auto !important;
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+    row-gap: 12px !important;
+  }
+  .merged-hero-copy { padding-top: 12px !important; padding-bottom: 12px !important; }
+  .merged-hero-copy h1 { margin-top: 0 !important; }
+  .merged-hero-copy .hero-label { margin-bottom: 12px !important; }
+  .hero-buttons { gap: 12px !important; }
+
+  /* Consistent breathing room without oversized section gaps. */
+  .merged-home > section,
+  .merged-home section.merged-original-products,
+  .merged-home section.merged-original-clients,
+  .xlg-home-about-section,
+  .our-clients-section,
+  .merged-original-products .products-section {
+    margin-bottom: 10px !important;
+  }
+
+  /* Home About orbit: circular images, contained within the orbit,
+     and behind the text so no image obscures the central copy. */
+  .xlg-home-about-section {
+    width: calc(100% - 16px) !important;
+    margin: 8px !important;
+    padding: 10px 0 !important;
+    overflow: hidden !important;
+  }
+  .xlg-home-about-orbit { overflow: hidden !important; }
+  .xlg-home-about-center { z-index: 30 !important; }
+  .xlg-home-about-orbit-img {
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    z-index: 4 !important;
+  }
+  .xlg-home-about-orbit-img img { border-radius: 50% !important; object-fit: cover !important; }
+
+  /* Product page: two primary actions stay together on one row. */
+  .xprod-actions {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+  }
+  .xprod-action { min-width: 0 !important; width: 100% !important; white-space: normal; }
+
+  /* Narrower contact drawer leaves the page-close area easy to reach. */
+  .contact-sidebar {
+    width: min(380px, 84vw) !important;
+    max-width: 84vw !important;
+  }
+  .sidebar-header { padding: 14px 16px !important; }
+  .sidebar-header img { width: min(125px, 42vw) !important; }
+  .sidebar-close { flex: 0 0 40px; min-width: 40px; min-height: 40px; }
+
+  /* AI chat panel sits above the floating close/chat control. */
+  .ai-chat-box {
+    bottom: 88px !important;
+    max-height: min(70dvh, 560px) !important;
+  }
+}
+
+/* Tablet-specific layout tuning: iPad Mini and similar widths. */
+@media (min-width: 601px) and (max-width: 1000px) {
+  .merged-hero-container { grid-template-columns: minmax(0, 1fr) !important; }
+  .merged-hero-copy { max-width: 760px; margin-inline: auto; text-align: center; }
+  .merged-hero-copy p { margin-inline: auto; }
+  .merged-hero-copy .hero-buttons,
+  .merged-hero-copy .hero-stats { justify-content: center; }
+  .xlg-home-about-section,
+  .xlg-home-about-container,
+  .xlg-home-about-orbit { min-height: 0 !important; height: auto !important; }
+  .xlg-home-about-orbit { min-height: 650px !important; }
+  .xlg-home-about-center { width: min(64%, 470px) !important; max-width: 470px !important; }
+  .xlg-home-about-center p { max-width: 100% !important; }
+  .xlg-home-about-orbit-img { width: clamp(54px, 7vw, 76px) !important; height: clamp(54px, 7vw, 76px) !important; }
+  .our-clients-section { min-height: 0 !important; height: auto !important; padding: 24px 18px !important; }
+}
+
+/* Mobile and portrait devices: reduce tall empty areas and keep actions usable. */
+@media (max-width: 600px) {
+  .navbar { width: calc(100% - 12px) !important; max-width: calc(100% - 12px) !important; margin: 1px 6px 0 !important; }
+  .merged-hero-container { width: calc(100% - 24px) !important; padding-top: 12px !important; padding-bottom: 12px !important; }
+  .merged-hero-copy { padding: 8px 0 12px !important; }
+  .merged-hero-copy h1 { font-size: clamp(29px, 8vw, 42px) !important; line-height: 1.12 !important; }
+  .merged-hero-copy p { font-size: 14px !important; line-height: 1.65 !important; }
+  .xlg-home-about-section { min-height: 400px !important; }
+  .xlg-home-about-container { min-height: 610px !important; }
+  .xlg-home-about-orbit { height: 610px !important; min-height: 610px !important; }
+  .xlg-home-about-center { width: 88% !important; max-width: 88% !important; margin-top: 8px !important; }
+  .xlg-home-about-center h3 { font-size:29px !important; }
+  .xlg-home-about-center p { max-width: 100% !important; margin-top: 14px !important; font-size: 12px !important; line-height: 1.55 !important; }
+  .xlg-home-about-orbit-img { width: 54px !important; height: 54px !important; border-radius: 50% !important; }
+  .xprod-actions { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; gap: 7px !important; }
+  .xprod-action { min-height: 42px !important; padding: 9px 6px !important; gap: 5px !important; font-size: clamp(11px, 3.1vw, 13px) !important; }
+  .contact-sidebar { width: min(333px, 80vw) !important; max-width: 80vw !important; }
+  .ai-chat-box { right: 10px !important; bottom: 82px !important; width: min(360px, calc(100vw - 20px)) !important; max-width: calc(100vw - 20px) !important; }
+  .our-clients-section { min-height: 0 !important; height: auto !important; padding: 0px 12px !important; }
+  .merged-original-products .products-section { padding-top: 18px !important; padding-bottom: 18px !important; }
+}
+
+/* Very narrow / tall phones and browser desktop-site emulation. */
+@media (max-width: 390px), (max-width: 1000px) and (max-height: 520px) and (orientation: portrait) {
+  .merged-hero-container { padding-top: 8px !important; padding-bottom: 8px !important; }
+  .merged-hero-copy { padding-top: 4px !important; }
+  .xlg-home-about-section { min-height: 570px !important; }
+  .xlg-home-about-container, .xlg-home-about-orbit { min-height: 570px !important; height: 570px !important; }
+  .xlg-home-about-center { width: 92% !important; max-width: 92% !important; }
+  .xlg-home-about-center p { font-size: 11px !important; }
+  .xlg-home-about-orbit-img { width: 46px !important; height: 46px !important; }
+  .xprod-action { font-size: 10.5px !important; padding-inline: 4px !important; }
+  .contact-sidebar { width: min(280px, 78vw) !important; max-width: 78vw !important; }
+}
+
+/* Short landscape screens: use compact vertical spacing instead of desktop-sized gaps. */
+@media (max-width: 1000px) and (max-height: 600px) and (orientation: landscape) {
+  .merged-hero-container { padding-block: 6px !important; }
+  .merged-hero-copy { padding-block: 4px !important; }
+  .xlg-home-about-section { min-height: 520px !important; }
+  .xlg-home-about-container, .xlg-home-about-orbit { min-height: 520px !important; height: 520px !important; }
+  .xlg-home-about-center { margin-top: 0 !important; }
+  .xlg-home-about-center p { margin-top: 10px !important; line-height: 1.45 !important; }
+  .ai-chat-box { max-height: 72dvh !important; }
+}

@@ -1,0 +1,54 @@
+/* Global reset, variables and shared rules extracted from the original CSS. */
+@import "./styles/global.css";
+
+
+/* ==========================================
+   GLOBAL PARAGRAPH ALIGNMENT FIX
+========================================== */
+
+/* Consistent paragraph readability */
+.info-page p,
+.info-section p,
+.about-page p {
+    max-width: 100%;
+    text-align: left;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: auto;
+}
+
+/* Keep headings separate from paragraph alignment */
+.info-page h1,
+.info-page h2,
+.info-page h3 {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .info-page p,
+    .info-section p,
+    .about-page p {
+        font-size: 15px;
+        line-height: 1.75;
+        letter-spacing: normal;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .info-page p,
+    .info-section p,
+    .about-page p {
+        font-size: 14px;
+        line-height: 1.8;
+        letter-spacing: 0;
+        text-align: left;
+    }
+
+    .info-page .original-about-copy p,
+    .about-page .original-about-copy p {
+        margin-bottom: 14px;
+    }
+}

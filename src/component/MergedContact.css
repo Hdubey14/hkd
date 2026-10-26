@@ -1,0 +1,775 @@
+/* =========================================================
+   MERGED CONTACT SECTION
+   Complete section: content + form in one viewport
+   ========================================================= */
+
+.merged-light-contact {
+  --contact-bg: #f4f6fb;
+  --contact-card: #ffffff;
+  --contact-text: #172033;
+  --contact-muted: #697386;
+  --contact-primary: #5145cd;
+  --contact-primary-dark: #3930a7;
+  --contact-border: #e2e7f0;
+  --contact-success: #168451;
+  --contact-danger: #c93636;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 0;
+  padding: 24px 22px;
+  background: var(--contact-bg);
+  color: var(--contact-text);
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.merged-light-contact *,
+.merged-light-contact *::before,
+.merged-light-contact *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.merged-light-contact .newsletter-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 58px);
+
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(26px, 3.2vw, 44px);
+
+  background: var(--contact-card);
+  border: 1px solid rgba(226, 231, 240, 0.95);
+  border-radius: 22px;
+
+  box-shadow:
+    0 18px 50px rgba(25, 35, 75, 0.07),
+    0 2px 8px rgba(25, 35, 75, 0.025);
+
+  overflow: hidden;
+}
+
+/* Subtle decorative background */
+
+.merged-light-contact .newsletter-box::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: -100px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(81, 69, 205, 0.075) 0%,
+    rgba(81, 69, 205, 0) 72%
+  );
+  pointer-events: none;
+}
+
+.merged-light-contact .newsletter-box::after {
+  content: "";
+  position: absolute;
+  right: -100px;
+  bottom: -150px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(35, 145, 205, 0.07) 0%,
+    rgba(35, 145, 205, 0) 72%
+  );
+  pointer-events: none;
+}
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.merged-light-contact .newsletter-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+.merged-light-contact .newsletter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 16px;
+
+  color: var(--contact-primary);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.merged-light-contact .newsletter-label::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  border-radius: 5px;
+  background: var(--contact-primary);
+}
+
+.merged-light-contact .newsletter-content h2 {
+  margin: 0 0 17px;
+  color: var(--contact-text);
+
+  font-size: clamp(29px, 3.1vw, 43px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  overflow-wrap: anywhere;
+}
+
+.merged-light-contact .newsletter-content h2 span {
+  color: var(--contact-primary);
+}
+
+.merged-light-contact .newsletter-content > p {
+  max-width: 440px;
+  margin: 0 0 22px;
+
+  color: var(--contact-muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   BENEFIT POINTS
+   ========================================================= */
+
+.merged-light-contact .newsletter-points {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+.merged-light-contact .newsletter-points > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  color: #303b50;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.merged-light-contact .newsletter-points svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+
+  color: var(--contact-primary);
+  font-size: 15px;
+}
+
+/* =========================================================
+   PRIVACY NOTE
+   ========================================================= */
+
+.merged-light-contact .newsletter-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  max-width: 410px;
+  padding: 13px 14px;
+
+  background: #f7f8fd;
+  border: 1px solid #ebedfa;
+  border-radius: 10px;
+
+  color: var(--contact-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.merged-light-contact .newsletter-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--contact-primary);
+  font-size: 14px;
+}
+
+/* =========================================================
+   RIGHT FORM CARD
+   ========================================================= */
+
+.merged-light-contact .newsletter-form-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-width: 0;
+
+  padding: clamp(20px, 2.3vw, 29px);
+
+  background: #ffffff;
+  border: 1px solid var(--contact-border);
+  border-radius: 16px;
+
+  box-shadow: 0 8px 28px rgba(27, 38, 75, 0.045);
+}
+
+/* =========================================================
+   FORM HEADER
+   ========================================================= */
+
+.merged-light-contact .newsletter-form-head {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-bottom: 19px;
+}
+
+.merged-light-contact .newsletter-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 44px;
+  height: 44px;
+
+  color: #ffffff;
+  background: var(--contact-primary);
+  border-radius: 12px;
+
+  font-size: 17px;
+  box-shadow: 0 5px 13px rgba(81, 69, 205, 0.2);
+}
+
+.merged-light-contact .newsletter-form-head h3 {
+  margin: 0 0 5px;
+  color: var(--contact-text);
+
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.merged-light-contact .newsletter-form-head p {
+  margin: 0;
+  color: var(--contact-muted);
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FORM LAYOUT
+   ========================================================= */
+
+.merged-light-contact .newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Each label + input group */
+
+.merged-light-contact .newsletter-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.merged-light-contact .newsletter-input-group label {
+  display: block;
+  margin: 0;
+
+  color: #30384b;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   INPUTS AND TEXTAREA
+   ========================================================= */
+
+.merged-light-contact .newsletter-input-group input,
+.merged-light-contact .newsletter-input-group textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 10px 12px;
+
+  color: var(--contact-text);
+  background: #fbfcff;
+  border: 1px solid #dfe4ee;
+  border-radius: 8px;
+  outline: none;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+
+  box-shadow: none;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.merged-light-contact .newsletter-input-group input {
+  height: 40px;
+}
+
+.merged-light-contact .newsletter-input-group textarea {
+  min-height: 76px;
+  height: 76px;
+  resize: vertical;
+  max-height: 150px;
+}
+
+.merged-light-contact .newsletter-input-group input::placeholder,
+.merged-light-contact .newsletter-input-group textarea::placeholder {
+  color: #9aa3b4;
+  opacity: 1;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.merged-light-contact .newsletter-input-group input:hover,
+.merged-light-contact .newsletter-input-group textarea:hover {
+  border-color: #c5c9e8;
+}
+
+.merged-light-contact .newsletter-input-group input:focus,
+.merged-light-contact .newsletter-input-group textarea:focus {
+  background: #ffffff;
+  border-color: var(--contact-primary);
+  box-shadow: 0 0 0 3px rgba(81, 69, 205, 0.1);
+}
+
+.merged-light-contact .newsletter-input-group input:disabled,
+.merged-light-contact .newsletter-input-group textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  background: #f1f3f8;
+}
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.merged-light-contact .merged-contact-error {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px 12px;
+
+  color: var(--contact-danger);
+  background: #fff3f3;
+  border: 1px solid #ffdada;
+  border-radius: 8px;
+
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   SUCCESS MESSAGE
+   ========================================================= */
+
+.merged-light-contact .merged-contact-success {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  width: 100%;
+  margin: 0;
+  padding: 10px 12px;
+
+  color: var(--contact-success);
+  background: #effbf4;
+  border: 1px solid #c9efd8;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.merged-light-contact .merged-contact-success svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.merged-light-contact .newsletter-submit {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+  text-align: center;
+  gap: 12px;
+  
+  width: 35%;
+  min-height: 45px;
+  margin: 8px 150px 0;
+  padding: 10px 13px 10px 17px;
+
+  color: #ffffff;
+  background: var(--contact-primary);
+  border: 1px solid var(--contact-primary);
+  border-radius: 9px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: left;
+
+  cursor: pointer;
+  appearance: none;
+  box-shadow: 0 5px 13px rgba(81, 69, 205, 0.16);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.merged-light-contact .newsletter-submit:hover:not(:disabled) {
+  background: var(--contact-primary-dark);
+  border-color: var(--contact-primary-dark);
+  box-shadow: 0 7px 18px rgba(81, 69, 205, 0.24);
+  transform: translateY(-1px);
+}
+
+.merged-light-contact .newsletter-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.merged-light-contact .newsletter-submit:focus-visible {
+  outline: 3px solid rgba(81, 69, 205, 0.25);
+  outline-offset: 3px;
+}
+
+.merged-light-contact .newsletter-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+  box-shadow: none;
+}
+
+.merged-light-contact .newsletter-submit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 27px;
+  height: 27px;
+
+  color: var(--contact-primary);
+  background: #ffffff;
+  border-radius: 7px;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   LOADING SPINNER
+   ========================================================= */
+
+.merged-light-contact .contact-spinner {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid rgba(81, 69, 205, 0.22);
+  border-top-color: var(--contact-primary);
+  border-radius: 50%;
+
+  animation: contact-spin 0.7s linear infinite;
+}
+
+@keyframes contact-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   MEDIUM SCREENS / TABLETS
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .merged-light-contact {
+    padding: 22px 16px;
+  }
+
+  .merged-light-contact .newsletter-box {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 22px;
+    padding: 25px;
+  }
+
+  .merged-light-contact .newsletter-content h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    letter-spacing: -1px;
+  }
+
+  .merged-light-contact .newsletter-content > p {
+    font-size: 13px;
+  }
+
+  .merged-light-contact .newsletter-form-wrap {
+    padding: 20px;
+  }
+
+  .merged-light-contact .newsletter-form-head h3 {
+    font-size: 17px;
+  }
+}
+
+/* =========================================================
+   MOBILE / NARROW TABLETS
+   ========================================================= */
+
+@media (max-width: 680px) {
+  .merged-light-contact {
+    padding: 18px 12px;
+  }
+
+  .merged-light-contact .newsletter-box {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+
+    max-width: 500px;
+    padding: 23px 17px;
+
+    border-radius: 16px;
+  }
+
+  .merged-light-contact .newsletter-label {
+    margin-bottom: 12px;
+    font-size: 10px;
+    letter-spacing: 1.7px;
+  }
+
+  .merged-light-contact .newsletter-content h2 {
+    margin-bottom: 13px;
+    font-size: clamp(29px, 7vw, 38px);
+    line-height: 1.15;
+  }
+
+  .merged-light-contact .newsletter-content > p {
+    margin-bottom: 17px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .merged-light-contact .newsletter-points {
+    gap: 11px;
+    margin-bottom: 17px;
+  }
+
+  .merged-light-contact .newsletter-points > div {
+    font-size: 12px;
+  }
+
+  .merged-light-contact .newsletter-note {
+    padding: 11px;
+    font-size: 11px;
+  }
+
+  .merged-light-contact .newsletter-form-wrap {
+    padding: 19px 15px;
+    border-radius: 13px;
+  }
+
+  .merged-light-contact .newsletter-form-head {
+    gap: 11px;
+    margin-bottom: 17px;
+  }
+
+  .merged-light-contact .newsletter-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+  }
+
+  .merged-light-contact .newsletter-form-head h3 {
+    font-size: 17px;
+  }
+
+  .merged-light-contact .newsletter-form {
+    gap: 13px;
+  }
+
+  .merged-light-contact .newsletter-input-group input {
+    height: 42px;
+  }
+
+  .merged-light-contact .newsletter-input-group textarea {
+    height: 85px;
+    min-height: 85px;
+  }
+
+  .merged-light-contact .newsletter-submit {
+    min-height: 46px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .merged-light-contact {
+    padding: 13px 9px;
+  }
+
+  .merged-light-contact .newsletter-box {
+    padding: 19px 12px;
+    gap: 20px;
+  }
+
+  .merged-light-contact .newsletter-content h2 {
+    font-size: 28px;
+  }
+
+  .merged-light-contact .newsletter-form-wrap {
+    padding: 15px 11px;
+  }
+
+  .merged-light-contact .newsletter-form-head h3 {
+    font-size: 16px;
+  }
+
+  .merged-light-contact .newsletter-input-group input,
+  .merged-light-contact .newsletter-input-group textarea {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   SHORT DESKTOP VIEWPORTS
+   Compact spacing so the form and button remain visible.
+   ========================================================= */
+
+@media (min-width: 681px) and (max-height: 800px) {
+  .merged-light-contact {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .merged-light-contact .newsletter-box {
+    gap: 30px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .merged-light-contact .newsletter-label {
+    margin-bottom: 10px;
+  }
+
+  .merged-light-contact .newsletter-content h2 {
+    margin-bottom: 12px;
+    font-size: clamp(28px, 2.8vw, 36px);
+  }
+
+  .merged-light-contact .newsletter-content > p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  .merged-light-contact .newsletter-points {
+    gap: 9px;
+    margin-bottom: 15px;
+  }
+
+  .merged-light-contact .newsletter-note {
+    padding: 10px 12px;
+  }
+
+  .merged-light-contact .newsletter-form-wrap {
+    padding: 17px 22px;
+  }
+
+  .merged-light-contact .newsletter-form-head {
+    margin-bottom: 12px;
+  }
+
+  .merged-light-contact .newsletter-form {
+    gap: 9px;
+  }
+
+  .merged-light-contact .newsletter-input-group {
+    gap: 4px;
+  }
+
+  .merged-light-contact .newsletter-input-group input {
+    height: 36px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .merged-light-contact .newsletter-input-group textarea {
+    height: 58px;
+    min-height: 58px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .merged-light-contact .newsletter-submit {
+    min-height: 40px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY: REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .merged-light-contact *,
+  .merged-light-contact *::before,
+  .merged-light-contact *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

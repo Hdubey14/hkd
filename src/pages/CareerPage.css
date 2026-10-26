@@ -1,0 +1,492 @@
+
+
+
+
+
+
+
+/* =========================================================
+   CAREER PAGE CSS
+   ========================================================= */
+
+/* ===== FROM src/App.css ===== */
+
+.services-heading {
+    max-width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    animation: servicesHeadingEnter 0.8s ease-out both;
+}
+
+
+/* ===== CTA ===== */
+
+.contact-hero .section-tag,
+.contact-hero h1,
+.contact-hero p {
+    position: relative;
+    z-index: 1;
+}
+
+.original-section-kicker {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+}
+
+.original-cta-inner h2 {
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--text-primary);
+    max-width: 880px;
+    font-size: clamp(32px, 4vw, 54px);
+}
+
+.original-cta-inner h2 span {
+    color: var(--accent);
+}
+
+.original-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    flex: 0 0 auto;
+    margin-top: 0;
+    background: #fff;
+    color: var(--accent);
+}
+
+.original-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(91, 76, 255, 0.25);
+}
+
+.original-about-cta {
+    position: relative;
+    overflow: hidden;
+    padding: 70px 0;
+    background: var(--accent);
+}
+
+.original-about-cta::before,
+.original-about-cta::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.original-about-cta::before {
+    width: 300px;
+    height: 300px;
+    right: -100px;
+    top: -170px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.original-about-cta::after {
+    width: 220px;
+    height: 220px;
+    left: -80px;
+    bottom: -130px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.original-cta-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.original-cta-inner .original-section-kicker,
+.original-cta-inner h2,
+.original-cta-inner h2 span {
+    color: #fff;
+}
+
+.original-about-container {
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .original-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 700px) {
+    .original-about-container {
+        width: calc(100% - 36px);
+    }
+}
+
+@media (max-width: 600px) {
+    .original-about-cta {
+        padding: 55px 0;
+    }
+
+    .original-about-container {
+        width: 88%;
+    }
+}
+
+@media (max-width: 400px) {
+    .original-about-container {
+        width: calc(100% - 28px);
+    }
+}
+
+/* ===== EXISTING CAREER JOB STYLES ===== */
+
+.career-jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.career-job-card {
+    padding: 30px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.career-job-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(141, 130, 255, 0.4);
+    box-shadow: 0 20px 45px rgba(30, 40, 65, 0.14);
+}
+
+.career-job-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.career-job-number {
+    color: var(--text-muted);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.career-job-badge {
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: rgba(141, 130, 255, 0.1);
+    color: var(--accent-light);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.career-job-card h3 {
+    color: var(--text-primary);
+    font-size: 25px;
+    margin: 0 0 25px;
+}
+
+.career-job-details {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.career-job-details div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.career-job-details span {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.career-job-details strong {
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-align: right;
+}
+
+.career-apply-button {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--accent-light);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.career-apply-button svg {
+    transition: transform 0.3s ease;
+}
+
+.career-apply-button:hover {
+    gap: 13px;
+}
+
+.career-apply-button:hover svg {
+    transform: translateX(4px);
+}
+
+/* =========================================================
+   TECHNOLOGIES SECTION
+   Larger cards + continuous right-to-left animation
+   ========================================================= */
+
+.career-tech-section {
+    overflow: hidden;
+}
+
+.career-tech-section .services-heading {
+    margin-bottom: 35px;
+}
+
+/* Viewport: hides cards outside the visible area */
+.career-tech-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 12px 0 25px;
+}
+
+/* Moving row */
+.career-tech-track {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+    width: max-content;
+    animation: careerTechScroll 32s linear infinite;
+    will-change: transform;
+}
+
+/* Pause when the user hovers over the technologies */
+.career-tech-marquee:hover .career-tech-track {
+    animation-play-state: paused;
+}
+
+/* Larger technology cards */
+.career-tech-card {
+    box-sizing: border-box;
+    flex: 0 0 175px;
+    width: 175px;
+    min-height: 165px;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(30, 40, 65, 0.06);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.career-tech-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(141, 130, 255, 0.5);
+    box-shadow: 0 16px 35px rgba(30, 40, 65, 0.13);
+}
+
+.career-tech-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 52px;
+    color: var(--accent-light);
+    transition: transform 0.3s ease;
+}
+
+.career-tech-card:hover .career-tech-icon {
+    transform: scale(1.12);
+}
+
+.career-tech-card span {
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/*
+   Two identical technology groups are rendered in JSX.
+   Moving by -50% creates a seamless loop.
+*/
+@keyframes careerTechScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Respect reduced-motion accessibility preference */
+@media (prefers-reduced-motion: reduce) {
+    .career-tech-track {
+        animation: none;
+        transform: none;
+    }
+}
+
+/* ===== OTHER EXISTING RESPONSIVE STYLES ===== */
+
+@media (max-width: 1000px) {
+    .career-jobs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .career-jobs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .career-job-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .career-tech-track {
+        gap: 16px;
+        animation-duration: 27s;
+    }
+
+    .career-tech-card {
+        flex-basis: 145px;
+        width: 145px;
+        min-height: 140px;
+        padding: 20px 12px;
+        border-radius: 16px;
+    }
+
+    .career-tech-icon {
+        font-size: 42px;
+    }
+
+    .career-tech-card span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .career-tech-card {
+        flex-basis: 130px;
+        width: 130px;
+        min-height: 125px;
+    }
+
+    .career-tech-icon {
+        font-size: 36px;
+    }
+}
+
+/* =========================================================
+   CAREER PAGE — MERGED CAREER SECTION
+   Scoped styles: Career page only
+   Home page styling remains unchanged
+   ========================================================= */
+
+.career-page-merged {
+    padding: 90px 6% 35px;
+    width: 100%;
+    overflow: hidden;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.career-page-merged .merged-light-career,
+.career-page-merged .career-section {
+    width: 100%;
+    background: var(--bg-primary) !important;
+    color: var(--text-primary);
+    box-sizing: border-box;
+    padding: 10px 0 10px !important;
+}
+
+.career-page-merged .career-header {
+    width: min(1380px, 92%);
+    margin: 0 auto 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.career-page-merged .career-label {
+    
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 15px !important;
+    border: 1px solid rgba(2, 0, 0, 0.95) !important;
+    border-color: #888a8d !important;
+    border-radius: 30px !important;
+    color: black !important;
+    background: rgba(247, 247, 247, 1) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.8px !important;
+    line-height: normal !important;
+    margin-bottom: 20px !important;
+    text-transform: uppercase !important;
+}
+
+.career-page-merged .career-heading {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Hide career slider counter on Career page only */
+.career-page-merged .career-counter {
+    display: none !important;
+}
+
+
+.info-page .info-section h2 span {
+    color: var(--accent) !important;
+}
+
+

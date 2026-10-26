@@ -1,0 +1,411 @@
+
+/* =========================================
+   XLLIGENT PAGE LOADER
+   Responsive centered zoom animation
+========================================= */
+
+.xlligent-loader {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    z-index: 99999999;
+
+    /* Keep the loader independent of page scrolling */
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.xlligent-loader-brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: max-content;
+    max-width: 100%;
+
+    opacity: 0;
+
+    transform: translate(-50%, -50%);
+
+    animation:
+        xlligent-brand-show 0.7s
+        cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* =========================================
+   LOGO TEXT
+========================================= */
+
+.xlligent-loader-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: clamp(38px, 7vw, 76px);
+    font-weight: 900;
+
+    letter-spacing: clamp(1px, 0.5vw, 5px);
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+/* =========================================
+   X ANIMATION
+   X zooms around its own center.
+   Zoom is capped to half the viewport.
+========================================= */
+
+.xlligent-loader-x {
+    display: inline-block;
+    position: relative;
+
+    z-index: 20;
+
+    color: #2868f5;
+
+    transform: scale(1);
+    transform-origin: center center;
+
+    /*
+      Maximum zoom is limited.
+      X stays centered instead of filling
+      the entire mobile screen.
+    */
+
+    animation:
+        xlligent-x-fullscreen 2.4s
+        cubic-bezier(0.76, 0, 0.18, 1) forwards;
+}
+
+/* =========================================
+   REST OF LOGO
+========================================= */
+
+.xlligent-loader-rest {
+    display: inline-block;
+
+    color: #111111;
+
+    opacity: 0;
+
+    animation:
+        xlligent-rest-show 0.65s 0.25s ease forwards;
+}
+
+/* =========================================
+   SOFTWARES TEXT
+========================================= */
+
+.xlligent-loader-software {
+    margin-top: 15px;
+    padding-left: 8px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 8px;
+    color: #64748b;
+
+    opacity: 0;
+
+    animation:
+        xlligent-software-show 0.6s 0.45s ease forwards;
+}
+
+/* =========================================
+   EXIT
+========================================= */
+
+.xlligent-exit .xlligent-loader-brand {
+    animation:
+        xlligent-brand-exit 0.35s ease forwards;
+}
+
+/* =========================================
+   KEYFRAMES
+========================================= */
+
+@keyframes xlligent-brand-show {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -46%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes xlligent-x-fullscreen {
+    0% {
+        transform: scale(1);
+    }
+
+    65% {
+        transform: scale(2.5);
+    }
+
+    100% {
+        transform: scale(2.5);
+    }
+}
+
+@keyframes xlligent-rest-show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes xlligent-software-show {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes xlligent-brand-exit {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+    .xlligent-loader-name {
+        font-size: clamp(38px, 9vw, 58px);
+        letter-spacing: 3px;
+    }
+
+    .xlligent-loader-software {
+        font-size: 10px;
+        letter-spacing: 5px;
+    }
+
+    @keyframes xlligent-x-fullscreen {
+        0% {
+            transform: scale(1);
+        }
+
+        65% {
+            transform: scale(2);
+        }
+
+        100% {
+            transform: scale(2);
+        }
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+    .xlligent-loader-name {
+        font-size: clamp(34px, 10vw, 44px);
+        letter-spacing: 2px;
+    }
+
+    .xlligent-loader-software {
+        margin-top: 12px;
+        padding-left: 5px;
+
+        font-size: 9px;
+        letter-spacing: 4px;
+    }
+
+    @keyframes xlligent-x-fullscreen {
+        0% {
+            transform: scale(1);
+        }
+
+        65% {
+            transform: scale(1.6);
+        }
+
+        100% {
+            transform: scale(1.6);
+        }
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+    .xlligent-loader-name {
+        font-size: 32px;
+        letter-spacing: 1px;
+    }
+
+    .xlligent-loader-software {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    @keyframes xlligent-x-fullscreen {
+        0% {
+            transform: scale(1);
+        }
+
+        65% {
+            transform: scale(1.4);
+        }
+
+        100% {
+            transform: scale(1.4);
+        }
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .xlligent-loader-brand,
+    .xlligent-loader-x,
+    .xlligent-loader-rest,
+    .xlligent-loader-software {
+        animation: none !important;
+    }
+
+    .xlligent-loader-brand {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    .xlligent-loader-x {
+        transform: scale(1);
+    }
+
+    .xlligent-loader-rest,
+    .xlligent-loader-software {
+        opacity: 1;
+    }
+}
+
+/* =========================================
+   MOBILE + TABLET FIX
+   Applies below 770px only
+========================================= */
+
+@media screen and (max-width: 769px) {
+    .xlligent-loader {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .xlligent-loader-brand {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: max-content;
+        max-width: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    .xlligent-loader-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .xlligent-loader-x {
+        position: relative;
+        transform-origin: center center;
+        animation-name: xlligent-x-mobile-zoom;
+        animation-duration: 2.4s;
+        animation-timing-function: cubic-bezier(0.76, 0, 0.18, 1);
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes xlligent-x-mobile-zoom {
+        0% {
+            transform: scale(1);
+        }
+
+        65%,
+        100% {
+            transform: scale(2.05);
+        }
+    }
+
+    .xlligent-exit .xlligent-loader-brand {
+        animation: xlligent-brand-exit 0.35s ease forwards;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media screen and (max-width: 480px) {
+    .xlligent-loader-x {
+        animation-name: xlligent-x-mobile-small-zoom;
+    }
+
+    @keyframes xlligent-x-mobile-small-zoom {
+        0% {
+            transform: scale(1);
+        }
+
+        65%,
+        100% {
+            transform: scale(2.2);
+        }
+    }
+}

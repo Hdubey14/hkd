@@ -1,0 +1,724 @@
+/* Shared global CSS extracted from the original project. */
+
+/* ===== GLOBAL EXTRACTED: src/styles/merged-second.css ===== */
+:root {
+    --bg: #f8fafc;
+    --bg-secondary: #ffffff;
+
+    --surface: #ffffff;
+    --surface-soft: #f8fafc;
+    --text: #021642;
+    --text-secondary: #64748b;
+    --muted: #64748b;
+
+    --border: #e2e8f0;
+
+    --primary: #0c085c;
+    --primary-dark: #2e2974;
+
+    --card: #ffffff;
+
+    --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+
+    --transition: all .3s ease;
+}
+
+section[id],
+[id="about"],
+[id="services"],
+[id="projects"],
+[id="contact"],
+[id="web-development"],
+[id="mobile-applications"],
+[id="ui-ux-design"],
+[id="ai-solutions"] {
+    scroll-margin-top: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+        width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+}
+
+@keyframes orbitRotate {
+
+    from {
+        transform: rotate(-18deg);
+    }
+
+    to {
+        transform: rotate(342deg);
+    }
+
+}
+
+@keyframes floatingCircle {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes floatingBadge {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+@keyframes imageReveal {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(.4)
+            translateY(100px)
+            rotate(0deg);
+
+        filter: blur(15px);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        filter: blur(0);
+    }
+}
+
+@keyframes floatingImage {
+
+    0% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -14px;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+}
+
+@keyframes centerReveal {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(.8)
+            translateY(50px);
+
+        filter: blur(15px);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+        filter: blur(0);
+    }
+}
+
+@keyframes reviewFade {
+
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes careerContentIn {
+
+from {
+    opacity: 0;
+    transform: translateX(35px);
+}
+
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+}
+
+/* ===== GLOBAL EXTRACTED: src/styles/merged-overrides.css ===== */
+
+
+/* ===== GLOBAL EXTRACTED: src/App.css ===== */
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    cursor: url("/public/image/custom.png") 16 16, auto;
+}
+
+:root {
+    --bg-primary: #eef1f7;
+    --bg-secondary: #e4e8f1;
+    --bg-card: #f8f9fc;
+
+    --text-primary: #171c2b;
+    --text-secondary: #596377;
+    --text-muted: #7b8496;
+
+    --border-color: rgba(35, 45, 70, 0.12);
+
+    --accent: #6558d9;
+    --accent-light: #5746ee;
+
+    --accent-blue: #079dcc;
+    /* --accent-gradient: linear-gradient(135deg,
+            #6558d9,
+            #079dcc); */
+
+    --navbar-bg: rgba(238, 241, 247, 0.981);
+
+    --shadow:
+        0 20px 50px rgba(30, 40, 65, 0.12);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+}
+
+body {
+
+    background: var(--bg-primary);
+    color: var(--text-primary);
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+@keyframes centerFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes floatingTop {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes floatingRight {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes floatingBottom {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes heroFloatTop {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes heroFloatRight {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes heroFloatBottom {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes heroContentEnter {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroVisualEnter {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pksContentIn {
+    from {
+        opacity: 0;
+        transform: translate(-20px, -50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
+}
+
+@keyframes servicesHeadingEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes testimonialsHeadingEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes faqHeadingEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aiChatOpen {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px) scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+
+    }
+
+}
+
+@keyframes aiAnswerAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(7px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+@keyframes successMessage {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes careerTechScroll {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-60%);
+    }
+
+}
+
+@keyframes heroBadgeFloat1 {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes heroBadgeFloat2 {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes heroBadgeFloat3 {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes heroBadgeFloat4 {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+@keyframes xlligent-brand-show {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.82)
+            /* translateY(10px); */
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1) translateY(0);
+    }
+}
+
+@keyframes xlligent-rest-show {
+
+    0% {
+        opacity: 0;
+
+        /* transform: translateX(18px); */
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+@keyframes xlligent-software-show {
+
+    0% {
+        opacity: 0;
+
+        /* transform: translateY(8px); */
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes xlligent-x-fullscreen {
+
+    /* -----------------------------------------
+       START
+       ----------------------------------------- */
+
+    0% {
+        transform: scale(0.15);
+
+        opacity: 0;
+    }
+
+
+    /* -----------------------------------------
+       X APPEARS
+       ----------------------------------------- */
+
+    12% {
+        transform: scale(0.85);
+
+        opacity: 1;
+    }
+
+
+    /* -----------------------------------------
+       NORMAL X
+       ----------------------------------------- */
+    /* 
+    30% {
+        transform: scale(1);
+    }
+
+
+    /* -----------------------------------------
+       ZOOM START
+       ----------------------------------------- */
+    /* 
+    45% {
+        transform: scale(2.5);
+    } */
+
+
+    /* -----------------------------------------
+       BIG X
+       ----------------------------------------- */
+
+    60% {
+        transform: scale(7);
+    }
+
+
+    /* -----------------------------------------
+       FULL SCREEN
+       -----------------------------------------
+
+       20 is intentionally huge.
+
+       Is point par X screen ke
+       bahar tak expand karega,
+       isliye beech mein half-size
+       rukega nahi.
+       */
+
+    78% {
+        transform: scale(22);
+
+        opacity: 1;
+    }
+
+
+    /* -----------------------------------------
+       FULL SCREEN HOLD
+       ----------------------------------------- */
+
+    88% {
+        transform: scale(22);
+
+        opacity: 1;
+    }
+
+
+    /* -----------------------------------------
+       X GOES UP
+       ----------------------------------------- */
+
+    100% {
+        transform:
+            /* translateY(-120vh) */
+            scale(220);
+
+        opacity: 1;
+    }
+}
+
+@keyframes xlligent-brand-exit {
+
+    0% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform: scale(0.98);
+    }
+}
+
+@media (max-width: 600px) {@keyframes xlligent-x-fullscreen {
+
+        0% {
+            transform: scale(0.15);
+
+            opacity: 0;
+        }
+
+        12% {
+            transform: scale(0.85);
+
+            opacity: 1;
+        }
+
+        30% {
+            transform: scale(1);
+        }
+
+        45% {
+            transform: scale(2.2);
+        }
+
+        60% {
+            transform: scale(6);
+        }
+
+        78% {
+            transform: scale(16);
+        }
+
+        88% {
+            transform: scale(16);
+
+            opacity: 1;
+        }
+
+        100% {
+            transform:
+                translateY(-120vh) scale(16);
+
+            opacity: 1;
+        }
+    }}

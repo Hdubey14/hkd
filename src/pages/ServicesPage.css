@@ -1,0 +1,310 @@
+
+/* =========================================================
+   SERVICES PAGE — PAGE LAYOUT
+   ========================================================= */
+
+.services-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.services-page .info-section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 52px 5% 58px;
+  box-sizing: border-box;
+}
+
+.services-page .services-heading {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.services-page .services-heading .section-tag {display: inline-flex !important;
+align-items: center !important;
+justify-content: center !important;
+padding: 8px 15px !important;
+border: 1px solid rgba(2, 0, 0, 0.95) !important;
+border-color: #888a8d !important;
+border-radius: 30px !important;
+color: black !important;
+background: rgba(255, 255, 255, 0.3) !important;
+font-size: 13px !important;
+font-weight: 600 !important;
+letter-spacing: 1.8px !important;
+line-height: normal !important;
+margin-bottom: 10px !important;
+}
+
+.services-page .services-heading h2 {
+
+    
+    width: 100%;
+
+    margin: 8px 0 22px;
+
+        max-width: 1000px;
+
+    margin: 10px auto 22px;
+
+    color: var(--about-ink);
+
+    font-size: 48px;
+
+    font-weight: 800;
+
+    line-height: 1.12;
+
+    letter-spacing: -2px;
+
+}
+
+.services-page .services-heading h2 span {
+  color: var(--accent, #665dd3);
+}
+
+.services-page .services-heading > p {
+  max-width: 1600px;
+  margin: 14px auto 0;           
+  padding: 0;
+  color: var(--text-secondary, #4d5667);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   WHY XLLIGENT — 8 COMPACT CARDS
+   ========================================================= */
+
+.services-page .services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.services-page .service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  padding: 20px 19px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid rgba(45, 55, 85, 0.1);
+  border-radius: 17px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(244, 246, 251, 0.96)
+  );
+  box-shadow: 0 8px 24px rgba(40, 50, 80, 0.055);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.services-page .service-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent-gradient, linear-gradient(90deg, #6558d9, #a69dff));
+  content: "";
+}
+
+.services-page .service-card:hover {
+  border-color: rgba(117, 105, 232, 0.3);
+  box-shadow: 0 14px 30px rgba(40, 50, 80, 0.1);
+}
+
+
+.services-page .service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(117, 105, 232, 0.16);
+  border-radius: 12px;
+  background: rgba(117, 105, 232, 0.09);
+  color: var(--accent, #665dd3);
+  font-size: 18px;
+}
+
+.services-page .service-card:hover .service-icon {
+  transform: translateY(-2px);
+}
+
+.services-page .service-card h3 {
+  margin: 0 0 9px;
+  color: var(--text-primary, #20283a);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.services-page .service-card p {
+  margin: 0;
+  color: var(--text-secondary, #4d5667);
+  font-size: 15px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   FOUR HIGHLIGHTS — ONE ROW ON DESKTOP
+   ========================================================= */
+
+.services-page .services-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  max-width: 1320px;
+  margin: 26px auto 0;
+}
+
+.services-page .services-highlights .about-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 0;
+  min-height: 45px;
+  margin: 0;
+  padding: 11px 13px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color, #e4e7ef);
+  border-radius: 11px;
+  background: var(--bg-card, #fff);
+  color: var(--text-secondary, #4d5667);
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.45;
+  transition:
+      border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.services-page .services-highlights .about-highlight:hover {
+  border-color: rgba(117, 105, 232, 0.35);
+  box-shadow: 0 8px 18px rgba(40, 50, 80, 0.07);
+}
+
+.services-page .services-highlights .about-highlight svg {
+  flex: 0 0 auto;
+  padding: 0;
+  color: var(--accent, #665dd3);
+  font-size: 15px;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+
+
+/* =========================================================
+   RESPONSIVE LAYOUT
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .services-page .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .services-page .services-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 770px) {
+.services-page .services-heading {
+    width: 100%;
+    max-width: 1050px;
+    margin: 62px auto 30px !important;
+    text-align: center;
+}
+}
+
+@media (max-width: 700px) {
+  .services-page .info-section {
+    padding: 38px 5% 44px;
+  }
+
+  .services-page .services-heading {
+    margin-bottom: 24px;
+    margin-top: 61px;
+
+  }
+
+  .services-page .services-heading h2 {
+    font-size: clamp(29px, 7vw, 37px);
+    letter-spacing: -0.4px;
+  }
+
+  .services-page .services-heading > p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .services-page .services-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .services-page .service-card {
+    padding: 18px;
+  }
+
+  .services-page .service-card h3 {
+    font-size: 17px;
+  }
+
+  .services-page .service-card p {
+    font-size: 14px;
+  }
+
+  .services-page .services-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .services-page .services-highlights .about-highlight {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 380px) {
+  .services-page .services-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SERVICES PAGE — STOP TEXT MOVEMENT */
+
+.services-page .services-heading,
+.services-page .services-heading *,
+.services-page .service-card,
+.services-page .service-card *,
+.services-page .services-highlights,
+.services-page .services-highlights * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}

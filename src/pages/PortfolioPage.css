@@ -1,0 +1,929 @@
+
+/* =========================================================
+   PORTFOLIO PAGE — LIGHT THEME
+   ========================================================= */
+
+.portfolio-page {
+    --portfolio-ink: #172033;
+    --portfolio-muted: #657087;
+    --portfolio-purple: #6558d9;
+    --portfolio-blue: #168bc4;
+    --portfolio-border: #e4e8f2;
+    --portfolio-surface: #ffffff;
+
+    min-height: 100vh;
+    background: #f8faff;
+    color: var(--portfolio-ink);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.portfolio-page .portfolio-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 6% 35px;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(101, 88, 217, 0.09), transparent 58%),
+        #f8faff;
+}
+
+.portfolio-page .portfolio-hero .section-tag {display: inline-flex !important;
+align-items: center !important;
+justify-content: center !important;
+padding: 8px 15px !important;
+border: 1px solid rgba(2, 0, 0, 0.95) !important;
+border-color: #888a8d !important;
+border-radius: 30px !important;
+color: black !important;
+background: rgba(255, 255, 255, 0.3) !important;
+font-size: 13px !important;
+font-weight: 600 !important;
+letter-spacing: 1.8px !important;
+line-height: normal !important;
+margin-bottom: 10px !important;
+text-transform: uppercase !important;
+}
+
+.portfolio-page .portfolio-hero h1 {
+    max-width: 1050px;
+    margin: 0 auto 15px;
+    color: var(--portfolio-ink);
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 800;
+    line-height: 1.13;
+    letter-spacing: -1.6px;
+}
+
+.portfolio-page .portfolio-hero h1 span {
+    display: inline;
+    color: transparent;
+    background: linear-gradient(100deg, #6558d9);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.portfolio-page .portfolio-hero p {
+    max-width: 1300px;
+    margin: 0 auto;
+    color: var(--portfolio-muted);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   PRODUCT SECTION
+   ========================================================= */
+
+.portfolio-page .xprod-section {
+    width: 100%;
+    min-height: 0;
+    padding: 22px 5% 65px;
+    background: #f8faff;
+    overflow: visible;
+}
+
+.xprod-carousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Product count and section label */
+
+.xprod-carousel-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 0 13px;
+    padding: 0 4px;
+}
+
+.xprod-carousel-kicker {
+    color: #778197;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: 1.6px;
+}
+
+.xprod-carousel-count {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+    flex-shrink: 0;
+    color: #929bad;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.xprod-carousel-count strong {
+    color: var(--portfolio-purple);
+    font-size: 21px;
+    font-weight: 800;
+}
+
+/* =========================================================
+   CAROUSEL STAGE AND PRODUCT CARD
+   ========================================================= */
+
+.xprod-stage {
+    position: relative;
+    width: 100%;
+}
+
+.xprod-card {
+    display: none;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    width: 100%;
+    min-height: 480px;
+    overflow: hidden;
+    border: 1px solid var(--portfolio-border);
+    border-radius: 24px;
+    background: var(--portfolio-surface);
+    box-shadow: 0 15px 42px rgba(30, 42, 75, 0.08);
+}
+
+.xprod-card.is-active {
+    display: grid;
+}
+
+/* No card hover movement or zoom */
+
+.xprod-card,
+.xprod-card:hover {
+    transform: none;
+    transition: none;
+    box-shadow: 0 15px 42px rgba(30, 42, 75, 0.08);
+}
+
+/* =========================================================
+   PRODUCT IMAGE PANEL
+   ========================================================= */
+
+.xprod-card-visual {
+    position: relative;
+    isolation: isolate;
+    min-width: 0;
+    min-height: 480px;
+    overflow: hidden;
+    background: #eef2ff;
+}
+
+/* Actual image element — fills the complete panel */
+
+.xprod-background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+/* Disable image zoom on hover */
+
+.xprod-card:hover .xprod-background,
+.xprod-background:hover {
+    transform: none;
+    transition: none;
+}
+
+.xprod-visual-shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        145deg,
+        rgba(238, 242, 255, 0.02),
+        rgba(29, 45, 85, 0.12)
+    );
+    pointer-events: none;
+}
+
+.xprod-visual-number {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #27324a;
+    font-size: 16px;
+    font-weight: 800;
+    box-shadow: 0 8px 25px rgba(30, 40, 80, 0.1);
+    backdrop-filter: blur(12px);
+}
+
+.xprod-visual-caption {
+    position: absolute;
+    bottom: 21px;
+    left: 22px;
+    right: 18px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 1.4px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
+/* =========================================================
+   PRODUCT CONTENT
+   ========================================================= */
+
+.xprod-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 480px;
+    padding: 30px 32px;
+    overflow: visible;
+    background: #ffffff;
+}
+
+.xprod-label {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0 11px;
+    color: var(--portfolio-purple);
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 1.6px;
+}
+
+.xprod-title {
+    margin: 0 0 13px !important;
+    color: var(--portfolio-ink) !important;
+    font-size: clamp(27px, 2.5vw, 36px) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0.5px !important;
+    overflow-wrap: anywhere !important;
+}
+
+.xprod-description {
+    display: block;
+    margin: 0 0 19px;
+    color: var(--portfolio-muted);
+    font-size: 16px;
+    line-height: 1.75;
+    overflow: visible;
+}
+
+/* =========================================================
+   PRODUCT FEATURES
+   ========================================================= */
+
+.xprod-feature-section {
+    width: 100%;
+    margin: 0 0 16px;
+}
+
+.xprod-feature-title {
+    margin: 0 0 12px;
+    color: #28334a;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 1.4px;
+}
+
+.xprod-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px 14px;
+    width: 100%;
+}
+
+.xprod-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 0;
+    color: #4d5a72;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.xprod-highlight svg {
+    flex: 0 0 auto;
+    margin-top: 3px;
+    color: var(--portfolio-purple);
+    font-size: 15px;
+}
+
+/* =========================================================
+   BUILT FOR
+   ========================================================= */
+
+.xprod-built-for {
+    width: 100%;
+    margin-top: auto;
+    padding: 13px 0;
+    border-top: 1px solid #edf0f6;
+}
+
+.xprod-built-for > span {
+    display: block;
+    margin-bottom: 5px;
+    color: #171a20;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+.xprod-built-for p {
+    margin: 0;
+    color: #5f6b81;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+/* =========================================================
+   PRODUCT ACTION BUTTONS
+   ========================================================= */
+
+.xprod-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 9px;
+    width: 100%;
+    margin-top: 2px;
+}
+
+.xprod-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+    min-height: 42px;
+    padding: 10px 11px;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 750;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.xprod-action svg {
+    flex: 0 0 auto;
+}
+
+.xprod-action:focus-visible,
+.xprod-arrow:focus-visible,
+.xprod-dot:focus-visible,
+.xprod-bottom-button:focus-visible {
+    outline: 3px solid rgba(101, 88, 217, 0.45);
+    outline-offset: 4px;
+}
+
+.xprod-primary {
+    color: #ffffff;
+    background: linear-gradient(110deg, #6558d9, #4c7ff0);
+    box-shadow: 0 6px 16px rgba(101, 88, 217, 0.17);
+}
+
+.xprod-primary:hover {
+    color: #ffffff;
+}
+
+.xprod-secondary {
+    color: #3f4b64;
+    background: #f4f6fb;
+    border-color: #e3e8f2;
+}
+
+.xprod-secondary:hover {
+    color: #28334a;
+    background: #edf0fa;
+}
+
+.xprod-contact {
+    grid-column: 1 / -0;
+    min-height: 39px;
+    color: var(--portfolio-purple);
+    background: #f7f6ff;
+    border-color: #040214;
+}
+
+.xprod-contact:hover {
+    color: #4f43bd;
+    background: #f0edff;
+}
+
+/* =========================================================
+   CAROUSEL ARROWS
+   ========================================================= */
+
+.xprod-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #e0e5f0;
+    border-radius: 50%;
+    color: #35415a;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 6px 20px rgba(31, 43, 72, 0.14);
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.xprod-arrow-prev {
+    left: -22px;
+}
+
+.xprod-arrow-next {
+    right: -22px;
+}
+
+.xprod-arrow svg {
+    font-size: 15px;
+}
+
+.xprod-arrow:hover {
+    color: #ffffff;
+    background: var(--portfolio-purple);
+    border-color: var(--portfolio-purple);
+}
+
+/* =========================================================
+   DOT NAVIGATION
+   ========================================================= */
+
+.xprod-carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 20px auto 0;
+}
+
+.xprod-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.xprod-dot {
+    display: block;
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 99px;
+    background: #cbd2e0;
+    cursor: pointer;
+}
+
+.xprod-dot.is-active {
+    width: 25px;
+    background: linear-gradient(90deg, #6558d9, #168bc4);
+}
+
+.xprod-swipe-note {
+    margin: 11px 0 0;
+    color: #929bad;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+}
+
+.xprod-swipe-note span {
+    padding: 0 5px;
+    color: var(--portfolio-purple);
+}
+
+/* =========================================================
+   BOTTOM CTA
+   ========================================================= */
+
+.xprod-bottom {
+    max-width: 900px;
+    margin: 60px auto 0;
+    padding: 42px 30px;
+    border: 1px solid #e4e8f2;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #ffffff, #f0f4ff);
+    box-shadow: 0 14px 38px rgba(30, 42, 75, 0.05);
+    text-align: center;
+}
+
+.xprod-bottom .section-tag {display: inline-flex !important;
+align-items: center !important;
+justify-content: center !important;
+padding: 8px 15px !important;
+border: 1px solid rgba(2, 0, 0, 0.95) !important;
+border-color: #888a8d !important;
+border-radius: 30px !important;
+color: black !important;
+background: rgba(255, 255, 255, 0.3) !important;
+font-size: 13px !important;
+font-weight: 600 !important;
+letter-spacing: 1.8px !important;
+line-height: normal !important;
+margin-bottom: 22px !important;
+text-transform: uppercase !important;
+}
+
+.xprod-bottom h2 {
+    max-width: 760px;
+    margin: 0 auto 14px;
+    color: var(--portfolio-ink);
+    font-size: clamp(28px, 3.3vw, 37px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+}
+
+.xprod-bottom p {
+    max-width: 700px;
+    margin: 0 auto 23px;
+    color: var(--portfolio-muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.xprod-bottom-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    min-height: 48px;
+    padding: 12px 23px;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    color: #ffffff;
+    background: linear-gradient(110deg, #6558d9, #168bc4);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 750;
+    box-shadow: 0 8px 22px rgba(101, 88, 217, 0.18);
+}
+
+.xprod-bottom-button:hover {
+    color: #ffffff;
+}
+
+/* =========================================================
+   TABLET RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+    .portfolio-page .xprod-section {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .xprod-card {
+        grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+        min-height: 470px;
+    }
+
+    .xprod-card-visual,
+    .xprod-content {
+        min-height: 470px;
+    }
+
+    .xprod-content {
+        padding: 27px 23px;
+    }
+
+    .xprod-title {
+        font-size: clamp(25px, 3vw, 33px);
+    }
+
+    .xprod-description {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .xprod-highlights {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .xprod-highlight {
+        font-size: 12px;
+    }
+
+    .xprod-arrow-prev {
+        left: -17px;
+    }
+
+    .xprod-arrow-next {
+        right: -17px;
+    }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 680px) {
+    .portfolio-page .portfolio-hero {
+        padding: 90px 6% 25px;
+    }
+
+    .portfolio-page .portfolio-hero .section-tag {
+        margin-bottom: 14px;
+        font-size: 10px;
+    }
+
+    .portfolio-page .portfolio-hero h1 {
+        font-size: clamp(32px, 8.5vw, 43px);
+        line-height: 1.16;
+        letter-spacing: -1px;
+    }
+
+    .portfolio-page .portfolio-hero p {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .portfolio-page .xprod-section {
+        padding: 20px 16px 10px;
+    }
+
+    .xprod-carousel-topline {
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 13px;
+    }
+
+    .xprod-carousel-kicker {
+        max-width: 235px;
+        font-size: 9px;
+        letter-spacing: 1.1px;
+    }
+
+    .xprod-carousel-count {
+        font-size: 12px;
+    }
+
+    .xprod-carousel-count strong {
+        font-size: 19px;
+    }
+
+    .xprod-card,
+    .xprod-card.is-active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 0;
+        border-radius: 20px;
+    }
+
+    .xprod-card-visual {
+        flex: 0 0 225px;
+        width: 100%;
+        min-height: 225px;
+        height: 225px;
+    }
+
+    .xprod-background {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .xprod-visual-number {
+        top: 14px;
+        left: 14px;
+        width: 43px;
+        height: 43px;
+        border-radius: 13px;
+        font-size: 13px;
+    }
+
+    .xprod-visual-caption {
+        bottom: 14px;
+        left: 15px;
+        font-size: 8px;
+    }
+
+    .xprod-content {
+        width: 100%;
+        min-height: 0;
+        padding: 24px 19px 20px;
+        overflow: visible;
+    }
+
+    .xprod-label {
+        margin-bottom: 10px;
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .xprod-title {
+        margin-bottom: 12px;
+        font-size: clamp(26px, 7vw, 32px);
+        line-height: 1.17;
+    }
+
+    .xprod-description {
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .xprod-feature-section {
+        margin-bottom: 17px;
+    }
+
+    .xprod-feature-title {
+        margin-bottom: 12px;
+        font-size: 10px;
+    }
+
+    .xprod-highlights {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .xprod-highlight {
+        gap: 9px;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .xprod-built-for {
+        padding: 15px 0;
+    }
+
+    .xprod-built-for p {
+        font-size: 12px;
+        line-height: 1.75;
+    }
+
+    .xprod-actions {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .xprod-action {
+        min-height: 43px;
+        padding: 10px 8px;
+        gap: 6px;
+        font-size: 11px;
+    }
+
+    .xprod-contact {
+        grid-column: 1 / -0;
+    }
+
+    .xprod-arrow {
+        top: 112px;
+        width: 38px;
+        height: 38px;
+        border-color: rgba(224, 229, 240, 0.95);
+        box-shadow: 0 5px 16px rgba(31, 43, 72, 0.18);
+    }
+
+    .xprod-arrow-prev {
+        left: 8px;
+    }
+
+    .xprod-arrow-next {
+        right: 8px;
+    }
+
+    .xprod-arrow svg {
+        font-size: 13px;
+    }
+
+    .xprod-carousel-controls {
+        margin-top: 19px;
+    }
+
+    .xprod-dots {
+        gap: 7px;
+        padding: 0 3px;
+    }
+
+    .xprod-dot {
+        width: 7px;
+        height: 7px;
+    }
+
+    .xprod-dot.is-active {
+        width: 21px;
+    }
+
+    .xprod-swipe-note {
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    .xprod-bottom {
+        margin-top: 40px;
+        padding: 30px 19px;
+        border-radius: 20px;
+    }
+
+    .xprod-bottom h2 {
+        font-size: 27px;
+    }
+
+    .xprod-bottom p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .xprod-bottom-button {
+        min-height: 46px;
+        padding: 11px 19px;
+        font-size: 12px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+    .portfolio-page .xprod-section {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .xprod-content {
+        padding: 21px 16px 18px;
+    }
+
+    .xprod-title {
+        font-size: 25px;
+    }
+
+    .xprod-description {
+        font-size: 13px;
+    }
+
+    .xprod-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .xprod-contact {
+        grid-column: auto;
+    }
+
+    .xprod-arrow {
+        top: 110px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .xprod-bottom {
+        padding: 27px 16px;
+    }
+
+    .xprod-bottom h2 {
+        font-size: 24px;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY: REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
